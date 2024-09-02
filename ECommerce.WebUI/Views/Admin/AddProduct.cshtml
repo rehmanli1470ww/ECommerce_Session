@@ -1,0 +1,96 @@
+﻿@model AdminAddProductViewModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body class="pt-5">
+    <form asp-controller="Admin" asp-action="AddProduct" method="post" class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Add Product</h4>
+            </div>
+            <div class="card-body">
+                
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Product.ProductName">Product Name</label>
+                    <input class="form-control" asp-for="Product.ProductName" placeholder="Enter product name" />
+                    <span asp-validation-for="Product.ProductName" class="text-danger"></span>
+                </div>
+
+                
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" asp-for="Product.Discontinued" />
+                    <label class="form-check-label" asp-for="Product.Discontinued">Discontinued</label>
+                    <span asp-validation-for="Product.Discontinued" class="text-danger"></span>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Product.SupplierId">Supplier ID</label>
+                    <input class="form-control" asp-for="Product.SupplierId" placeholder="Enter supplier ID" />
+                    <span asp-validation-for="Product.SupplierId" class="text-danger"></span>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Product.CategoryId">Category ID</label>
+                    <input class="form-control" asp-for="Product.CategoryId" placeholder="Enter category ID" />
+                    <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Product.QuantityPerUnit">Quantity Per Unit</label>
+                    <input class="form-control" asp-for="Product.QuantityPerUnit" placeholder="Enter quantity per unit" />
+                    <span asp-validation-for="Product.QuantityPerUnit" class="text-danger"></span>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Product.UnitPrice">Unit Price</label>
+                    <input class="form-control" asp-for="Product.UnitPrice" placeholder="Enter unit price" />
+                    <span asp-validation-for="Product.UnitPrice" class="text-danger"></span>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Product.UnitsInStock">Units In Stock</label>
+                    <input class="form-control" asp-for="Product.UnitsInStock" placeholder="Enter units in stock" />
+                    <span asp-validation-for="Product.UnitsInStock" class="text-danger"></span>
+                </div>
+
+               
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Product.UnitsOnOrder">Units On Order</label>
+                    <input class="form-control" asp-for="Product.UnitsOnOrder" placeholder="Enter units on order" />
+                    <span asp-validation-for="Product.UnitsOnOrder" class="text-danger"></span>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Product.ReorderLevel">Reorder Level</label>
+                    <input class="form-control" asp-for="Product.ReorderLevel" placeholder="Enter reorder level" />
+                    <span asp-validation-for="Product.ReorderLevel" class="text-danger"></span>
+                </div>
+
+                
+                <div class="text-center">
+                    <button class="btn btn-success btn-lg" type="submit">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@model ProductListViewModel
+@if (Model.Products == null || Model.Products.Count == 0)
+{
+    <span class="alert alert-danger">No Product exist</span>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>UnitsInStock</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Products)
+            {
+                <tr>
+                    <td>
+                        @item.ProductName
+                    </td>
+                    <td>
+                        @item.UnitPrice
+                    </td>
+                    <td>
+                        @item.UnitsInStock
+                    </td>
+                    <td >
+                        <a asp-controller="Admin" asp-action="RemoveProduct" asp-route-id="@item.ProductId" asp-route-page="@Model.CurrentPage" asp-route-category="@Model.CurrentCategory" class="btn btn-warning">REMOVE</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <product-list-pager current-category="@Model.CurrentCategory"
+                        current-page="@Model.CurrentPage"
+                        page-count="@Model.PageCount"
+                        page-size="@Model.PageSize" current-controller="Admin">
+    </product-list-pager>
+
+    <a asp-controller="Admin" asp-action="AddProduct" asp-route-page="@Model.CurrentPage" asp-route-category="@Model.CurrentCategory" class="btn btn-xs btn-success">ADD PRODUCT</a>
+
+}

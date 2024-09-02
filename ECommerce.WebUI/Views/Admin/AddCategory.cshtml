@@ -1,0 +1,45 @@
+﻿@model AdminAddCategoryViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body class="mt-5">
+    <form asp-controller="Admin" asp-action="AddCategory" method="post" class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Add Category</h4>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Category.CategoryName">Category Name</label>
+                    <input class="form-control" asp-for="Category.CategoryName" placeholder="Enter category name" />
+                    <span asp-validation-for="Category.CategoryName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Category.Description">Description</label>
+                    <textarea class="form-control" asp-for="Category.Description" rows="3" placeholder="Enter description"></textarea>
+                    <span asp-validation-for="Category.Description" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Category.Picture">Picture URL</label>
+                    <input class="form-control" asp-for="Category.Picture" placeholder="Enter picture URL" />
+                    <span asp-validation-for="Category.Picture" class="text-danger"></span>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success btn-lg" type="submit">Add Category</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
